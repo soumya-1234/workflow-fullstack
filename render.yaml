@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: matbook-workflow
+    env: node
+    region: singapore
+    plan: free
+    buildCommand: npm install && npm run postinstall
+    startCommand: npm start
+    autoDeploy: true
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: 20.19.0
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+    branch: main

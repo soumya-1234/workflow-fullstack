@@ -1,0 +1,17 @@
+{
+  "name": "matbook-project",
+  "version": "1.0.0",
+  "description": "Workflow Management System",
+  "engines": {
+    "node": "20.19.0",
+    "npm": "11.2.0"
+  },
+  "scripts": {
+    "install-client": "cd workflow-management && npm install",
+    "install-server": "cd server && npm install",
+    "build-client": "cd workflow-management && npm run build",
+    "start-server": "cd server && npm start",
+    "postinstall": "npm run install-server && npm run install-client && npm run build-client",
+    "start": "npm run start-server"
+  }
+}
